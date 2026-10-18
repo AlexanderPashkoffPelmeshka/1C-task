@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Дневник</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h2>Дневник обещаний</h2>
+
+    <button onclick="createNewDraft()">Добавить дело</button>
+    <hr>
+
+    <div id="left-block">
+        <input type="text" id="search" placeholder="Поиск..." onkeyup="loadCases()">
+        
+        <select id="status" onchange="loadCases()">
+            <option value="">Все</option>
+            <option value="open">В работе</option>
+            <option value="done">Выполнено</option>
+            <option value="cancelled">Отменено</option>
+            <option value="draft">Черновики</option>
+        </select>
+        
+        <br><br>
+        Дата с: <input type="date" id="date1" onchange="loadCases()">
+        по: <input type="date" id="date2" onchange="loadCases()">
+
+        <div id="list"></div>
+    </div>
+
+    <div id="right-block">
+        <p>Выберите дело из списка или создайте новое</p>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
